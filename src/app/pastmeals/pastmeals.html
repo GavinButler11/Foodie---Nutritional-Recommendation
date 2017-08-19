@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <a href="#/first"><button type="button" class="btn btn-success btn-sm col-md-1 col-sm-1">Back</button></a>
+        </div>
+        <br>
+        <div class="row">
+            <a href="#/result"><button type="button" class="btn btn-success btn-sm">Get lastest result</button></a>
+        </div>
+        <br>
+        <div class="row table-responsive">
+            <table class="table table-striped">
+                <tr>
+                    <td>
+                        <h4>Your Latest Meal:</h4><br>
+                        <p  ng-repeat="foods in pastmeals.lastMeal[0].foods">{{ foods.name }} {{foods.size}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div ng-repeat="meal in pastmeals.lastMeal">
+                            <div class="carbs col-md-1">
+                                <p id="categoryLabel">
+                                    Carbs: <br> {{ meal.nutrition.carbs}}g
+                                </p>
+                            </div>
+                            <div class="carbs col-md-4">
+                                <p id="categoryLabel">
+                                    Protein: <br> {{ meal.nutrition.protein}}g
+                                </p>
+                            </div>
+                            <div class="carbs col-md-4">
+                                <p id="categoryLabel">
+                                    Fat: <br>{{ meal.nutrition.fat}}g
+                                </p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Your Second Latest Meal:</h4><br>
+                        <p  ng-repeat="foods in pastmeals.secondlastMeal[0].foods">{{ foods.name }} {{foods.size}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div ng-repeat="meal in pastmeals.secondlastMeal">
+                            <div class="carbs col-md-1">
+                                <p id="categoryLabel">
+                                    Carbs: <br> {{ meal.nutrition.carbs}}g
+                                </p>
+                            </div>
+                            <div class="carbs col-md-4">
+                                <p id="categoryLabel">
+                                    Protein: <br> {{ meal.nutrition.protein}}g
+                                </p>
+                            </div>
+                            <div class="carbs col-md-4">
+                                <p id="categoryLabel">
+                                    Fat: <br>{{ meal.nutrition.fat}}g
+                                </p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Your Third Latest Meal:</h4><br>
+                        <p  ng-repeat="foods in pastmeals.thirdlastMeal[0].foods">{{ foods.name }}, {{foods.size}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div ng-repeat="meal in pastmeals.thirdlastMeal">
+                            <div class="carbs col-md-1">
+                                <p id="categoryLabel">
+                                    Carbs: <br> {{ meal.nutrition.carbs}}g
+                                </p>
+                            </div>
+                            <div class="carbs col-md-4">
+                                <p id="categoryLabel">
+                                    Protein: <br> {{ meal.nutrition.protein}}g
+                                </p>
+                            </div>
+                            <div class="carbs col-md-4">
+                                <p id="categoryLabel">
+                                    Fat: <br>{{ meal.nutrition.fat}}g
+                                </p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

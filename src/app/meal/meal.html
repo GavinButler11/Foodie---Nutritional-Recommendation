@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <a href="#/logdiet"><button type="button" class="btn btn-success btn-sm col-md-1 col-sm-1">Categories</button></a>
+        </div>
+        <br>
+        <div class="mainContent col-md-8 col-sm-8 col-xs-8">
+            <div ng-repeat="food in meal.foods">
+                <div class="categoryRow col-md-3 col-sm-3 col-xs-3">
+                    <img ng-src="{{ meal.getImage(); }}" style="height:48px;width:48px">
+                    <p id="categoryLabel">
+                        {{ food.name }}
+                    </p>
+                </div>
+                <div class="dietQuantity col-md-3 col-sm-3 col-xs-3">
+                    <form action="" method="POST" name="foodsForm" id="foods-form">
+                        <input type="radio" id="amountLarge" name="quantity" value="large" ng-click="meal.logSelection(food.name,'large')"> Lg<br>
+                        <input type="radio" id="amountMedium" name="quantity" value="medium" ng-click="meal.logSelection(food.name,'medium')"> Md<br>
+                        <input type="radio" id="amountSmall" name="quantity" value="small" ng-click="meal.logSelection(food.name,'small')"> Sm<br>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="sideContent col-md-3 col-sm-3 col-xs-3">
+                <div class="row">
+                    <div class="meal">
+                        <div class="form-group">
+                            <label for="meal-type">Meal type: </label>
+                            <select ng-model="meal.$mealService.$mealType" ng-change="meal.$mealService.updateType()">
+                            <option ng-repeat="type in meal.$mealService.$types" ng-selected="meal.$mealService.$mealType == type" value="{{type}}">{{type}}</option>
+                        </select>
+                        </div>
+                        <h5>- Logged selections -</h5>
+                        <div ng-repeat="item in meal.$mealService.$selections">
+                            <p>{{item.food}} {{item.size}}<button type="button" class="btn btn-danger" ng-click="meal.$mealService.removeSelection($index)">x</button> </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="buttons" class="row">
+                    <button ng-disabled="disabled" class="btn btn-success btn-sm" ng-click="meal.$mealService.submitSelections();">Submit meal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

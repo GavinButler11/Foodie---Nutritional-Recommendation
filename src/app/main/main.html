@@ -1,0 +1,120 @@
+<!doctype html>
+<html ng-app="myMessageFront" ng-strict-di>
+
+<head>
+    <meta charset="utf-8">
+    <title>Nutrition App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- run `gulp inject` to automatically populate bower styles dependencies -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css({.tmp/serve,src}) styles/app.css -->
+    <!-- inject:css -->
+    <!-- css files will be automatically insert here -->
+    <!-- endinject -->
+    <!-- endbuild -->
+
+</head>
+
+<body>
+    <div class="jumbotron col-md-12">
+        <div class="row">
+            <div class="jumboLeft col-md-6 col-md-push-1">
+                <img class="jumboImage" src="assets/images/jumbotron.png">
+            </div>
+            <div class="jumboRight col-md-6 col-md-pull-1">
+                <img class="jumboImage" src="assets/images/jumbotron2.png">
+            </div>
+        </div>
+        <h2>Track Your Nutritional Intake and Recieve Dietary Recommendations</h2>
+        <p>Sign up for free above to recieve your own Foodie account</p>
+    </div>
+
+    <div class="row">
+        <div class="features col-md-8 col-md-push-2">
+            <h2>Features</h2>
+            <p>If you want to improve on something, you need to track your progress, and the behaviors that cause progress. Researchers call this “self-monitoring” — the process of tracking and analyzing your thoughts and actions to become more aware of how they impact your goals.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="box col-md-4 col-md-push-1 col-sm-4 col-xs-4">
+            <img src="assets/images/add-square-button.png" style="float:left;width:42px;height:42px;">
+            <p class="iconText">Main Features</p>
+        </div>
+        <div class="box col-md-4 col-md-push-1 col-sm-4 col-xs-4">
+            <img src="assets/images/info.png" style="float:left;width:42px;height:42px;">
+            <p class="iconText">About</p>
+        </div>
+        <div class="box col-md-4 col-md-push-1 col-sm-4 col-xs-4">
+            <img src="assets/images/peach.png" style="float:left;width:42px;height:42px;">
+            <p class="iconText">Log Diet</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="description col-md-3 col-md-push-1 col-sm-4 col-xs-4">
+            <ul>
+                <li>Easy to use</li>
+                <li>Ordered by category</li>
+                <li>Diet recommendations</li>
+                <li>Well structured data</li>
+                <li>Log your diet</li>
+                <li>Save and view past meals</li>
+
+            </ul>
+        </div>
+        <div class="description col-md-3 col-md-push-2 col-sm-4 col-xs-4">
+            <p>Foodie is an app where you can log your diet and based on your input we will recommend a healthy eating diet plan for you.</p>
+            <p>Algorithms are used to calculate what nutrients are missing in your diet and what foods can be recommended to help you achieve a healthy diet.</p>
+        </div>
+        <div class="description col-md-3 col-md-push-3 col-sm-4 col-xs-4">
+            <p>(Login to access) Food items are broken down into categories so it is easy for you to log your diet.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="socialMediaHeading col-md-12">
+            <h3>Login in to our app with social media</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="socialMedia col-md-2 col-md-push-5 col-sm-4 col-sm-push-5  col-xs-4 col-xs-push-4">
+            <img src="assets/images/facebook.png" style="width:48px;height:48px;">
+            <img src="assets/images/twitter.png" style="width:48px;height:48px;">
+            <img src="assets/images/instagram.png" style="width:48px;height:48px;">
+        </div>
+    </div>
+    <!--[if lt IE 10]>
+          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <div ui-view></div>
+
+    <!-- build:js(src) scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- run `gulp inject` to automatically populate bower script dependencies -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp/serve,.tmp/partials}) scripts/app.js -->
+    <!-- inject:js -->
+    <!-- js files will be automatically insert here -->
+    <!-- endinject -->
+
+    <!-- inject:partials -->
+    <!-- angular templates will be automatically converted in js and inserted here -->
+    <!-- endinject -->
+    <!-- endbuild -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<html ng-app="myMessageFront">
+
+<div class="container">
+    <div class="row">
+        <a href="#/first"><button type="button" class="btn btn-success btn-sm col-md-1 col-sm-1">Back</button></a>
+    </div>
+    <br>
+    <div class="row">
+        <p class="logdietText">Begin logging diet by selecting a category of food</p>
+    </div>
+
+    <div class="mainContent">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="categoryRow col-md-3">
+                        <a ng-click="logdiet.setFoodType('Fruit')" href="#/meal">
+                            <img src="assets/images/apple.png" style="height:84px;width:84px">
+                            <p class="logdietLabel">Fruit</p>
+                        </a>
+                    </div>
+                    <div class="categoryRow col-md-3">
+                        <a ng-click="logdiet.setFoodType('Vegetable')" href="#/meal">
+                            <img src="assets/images/harvest.png" style="height:84px;width:84px">
+                            <p class="logdietLabel">Veg</p>
+                        </a>
+                    </div>
+                    <div class="categoryRow col-md-3">
+                        <a ng-click="logdiet.setFoodType('Meat')" href="#/meal">
+                            <img src="assets/images/steak.png" style="height:84px;width:84px">
+                            <p class="logdietLabel">Meat</p>
+                        </a>
+                    </div>
+                    <div class="categoryRow col-md-3">
+                        <a ng-click="logdiet.setFoodType('Bread')" href="#/meal">
+                            <img src="assets/images/bread.png" style="height:84px;width:84px">
+                            <p class="logdietLabel">Bread</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="categoryRow col-md-3">
+                        <a ng-click="logdiet.setFoodType('Pastry')" href="#/meal">
+                            <img src="assets/images/pretzel.png" style="height:84px;width:84px">
+                            <p class="logdietLabel">Pastry</p>
+                        </a>
+                    </div>
+                    <div class="categoryRow col-md-3">
+                        <a ng-click="logdiet.setFoodType('Dairy')" href="#/meal">
+                            <img src="assets/images/cheese.png" style="height:84px;width:84px">
+                            <p class="logdietLabel">Dairy</p>
+                        </a>
+                    </div>
+                    <div class="categoryRow col-md-3">
+                        <a ng-click="logdiet.setFoodType('Snacks')" href="#/meal">
+                            <img src="assets/images/chocolate.png" style="height:84px;width:84px">
+                            <p class="logdietLabel">Snacks</p>
+                        </a>
+                    </div>
+                    <div class="categoryRow col-md-3">
+                        <a ng-click="logdiet.setFoodType('Drinks')" href="#/meal">
+                            <img src="assets/images/coke.png" style="height:84px;width:84px">
+                            <p class="logdietLabel">Drinks</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="sideContent col-md-3 col-sm-3 col-xs-3">
+                    <div class="row">
+                        <div class="meal">
+                            <div class="form-group">
+                                <label for="meal-type">Meal type: </label>
+                                <select ng-model="logdiet.$mealService.$mealType" ng-change="logdiet.updateType()">
+                                    <option ng-repeat="type in logdiet.$mealService.$types" ng-selected="logdiet.$mealService.$mealType == type" value="{{type}}">{{type}}</option>
+                                </select>
+                            </div>
+                            <h5>- Logged selections -</h5>
+                            <div ng-repeat="item in logdiet.$mealService.$selections">
+                                <p>{{item.food}} {{item.size}}<button type="button" class="btn btn-danger" ng-click="logdiet.$mealService.removeSelection($index)">x</button> </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="buttons" class="row">
+                        <button class="btn btn-success btn-sm" ng-click="logdiet.$mealService.submitSelections();">Submit meal</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

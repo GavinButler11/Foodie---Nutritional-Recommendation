@@ -1,0 +1,20 @@
+<nav ng-controller="NavbarController as nav" class="navbar navbar-static-top navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <span class="glyphicon glyphicon-home"></span> Foodie
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+            <ul class="nav navbar-nav">
+                <li ng-hide="nav.isAuthenticated()"><a class="navlink" ng-href="#">HOME</a></li>
+                <li ng-show="nav.isAuthenticated()"><a class="navlink" ui-sref="first">HOME</a></li>
+                <li ng-show="nav.isAuthenticated()"><a class="navlink" ui-sref="logdiet">LOG DIET</a></li>
+                <li ng-show="nav.isAuthenticated()"><a class="navlink" ui-sref="profile">PROFILE</a></li>
+                <li ng-hide="nav.isAuthenticated()"><a class="navlink" ui-sref="auth">LOGIN/REGISTER</a></li>
+                <li ng-show="nav.isAuthenticated()"><a class="navlink to-right" ng-click="nav.logout()" ui-sref="home">LOGOUT</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

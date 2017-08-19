@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <a href="#/first"><button type="button" class="btn btn-success btn-sm col-md-1 col-sm-1">Back</button></a>
+        </div>
+        <br>
+        <div class="mainContent col-md-8">
+            <div class="row">
+                <p>Here you can enter personal profile details so we can make more accurate recommendations for you!</p>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-8">
+                    <form name="myForm">
+                        <p>Age: e.g 18 <br>
+                            <input type="number" name="myAge" ng-model="myName" id="profileAge" min=12 max="110" ng-pattern="integerval" required>
+                            <span ng-show="myForm.myAge.$touched && myForm.myAge.$invalid">Enter your age. (Must be 12 or older).</span> <br><br>
+                        </p>
+                        <p>Height in cm. E.g 177: <br>
+                            <input type="number" name="myHeight" ng-model="myHeight" id="profileHeight" min="50" max="250" ng-pattern="integerval" required>
+                            <span ng-show="myForm.myHeight.$touched && myForm.myHeight.$invalid">Enter your height. (Between 50 and 250)</span> <br><br>
+                        </p>
+                        <p>Weight in kgs. E.g 65: <br>
+                            <input type="number" name="myWeight" ng-model="myWeight" id="profileWeight" min="10" max="280" ng-pattern="integerval" required>
+                            <span ng-show="myForm.myWeight.$touched && myForm.myWeight.$invalid">Enter your weight. (Between 10 and 280).</span><br><br>
+                        </p>
+
+                        <button type="button" ng-disabled="myForm.$invalid" class="btn btn-success btn-sm" value="Submit" ng-click="profile.showInput();">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="sideContent col-md-3 col-sm-3 col-xs-3">
+            <div class="row">
+                <div class="meal">
+                    <h5>- Your Input -</h5>
+                    <div id="cart">
+                        <ul id="cart-list">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="buttons" class="row">
+                <a href="#/main">
+                <button class="btn btn-success btn-sm" ng-click="profile.submitInputs();">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<div class="container">
+
+    <div class="col-md-6">
+        <div class="textIntro">
+            <h4>Login to access features:</h4>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Login</div>
+            <div class="panel-body">
+                <form name="login" novalidate ng-submit="auth.login();">
+                    <div class="form-group">
+                        <label>Email address</label>
+                        <input id="email" type="email" name="loginEmail" class="form-control" ng-model="auth.login.user.email" required>
+                        <p class="bg-danger error validationerror" ng-show="login.loginEmail.$invalid && login.loginEmail.$touched">You must enter a valid email address</p>
+
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" name="loginPassword" class="form-control" ng-model="auth.login.user.pwd" required>
+                        <p class="bg-danger error validationerror" ng-show="login.loginPassword.$invalid && login.loginPassword.$touched">You must enter a password</p>
+                    </div>
+                    <button ng-disabled="login.$invalid" type="submit" class="btn btn-default" name="loginButton" >Submit</button>
+                    <p class="bg-danger" ng-show="login.$submitted && login.loginEmail.$error.required">Invalid Email or Password</p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="textIntro">
+            <h4>... or register if you don't have an account:</h4>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Register</div>
+            <div class="panel-body">
+                <form name="register" ng-submit="auth.register()">
+                    <div class="form-group">
+                        <label>Email address</label>
+                        <input type="email" name="registerEmail " class="form-control" ng-model="auth.user.email" required>
+                        <p class="bg-danger error validationerror" ng-show="register.registerEmail.$invalid && register.registerEmail.$touched">You must enter a valid email address</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="pwd" ng-model="auth.user.pwd" required>
+                        <p class="bg-danger error validationerror" ng-show="register.pwd.$invalid && register.pwd.$touched">You must enter a password</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Password Confirm</label>
+                        <input type="password" class="form-control" compare-to="auth.user.pwd" name="pwdConfirm" ng-model="pwdConfirm" required>
+                        <p class="bg-danger error validationerror" ng-this.$mealService = MealService;
+                           show="register.pwdConfirm.$invalid && register.pwdConfirm.$touched">You must confirm your password</p>
+                    </div>
+                    <p class="bg-danger" ng-show="register.pwdConfirm.$dirty && register.pwdConfirm.$invalid">Passwords do not match</p>
+                    <button ng-disabled="register.pwdConfirm.$invalid && register.$invalid" type="submit" class="btn btn-default" >Submit</button>
+
+                    <p ng-show="message">{{ message }}</p>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
